@@ -1,0 +1,59 @@
+{
+    "indentation": {
+      "regexp": "^(\\s+)",
+      "skip": true
+    },
+    "keyword": {
+      "regexp": "^([A-Z]{2,})",
+      "list" : [
+        "class", "public", "static", "function", "var", "main",
+        "return", "using", "trace", "Void", "Int", "Bool", "Float",
+        "abstract", "inline", "new", "typedef", "this", "import", 
+        "rtti", "extern", "default", "null", "if", "else", "switch", 
+        "case", "enum", "true", "false", "list", "for", "in", "v"
+        ]
+    },
+    "operator": {
+      "regexp": "^([^\\w\\d\\s]{1,2}|\\w{2,3})",
+      "list" : ["+", "-", "*", "/", "%", "=", "==", "!=", "<=", ">=", "<", ">", "&", "|", "~", "^", "<<", ">>", ">>>"]
+    },
+    "hex_dig_const": {
+      "regexp": "^(\\d[ABCDEF\\d]+H)",
+      "link": "arrayOfConst"
+    },
+    "real_dig_const": {
+      "regexp": "^(\\d+\\.\\d*([ED][\\+\\-]\\d+)?)",
+      "link": "arrayOfConst"
+    },
+    "char_const": {
+      "regexp": "^(\\\"\\w\\\"|\\d[ABCDEF\\d]+X)",
+      "link": "arrayOfConst"
+    },
+    "string_const": {
+      "regexp": "^(\\\"[\\w\\W]*?\\\")",
+      "link": "arrayOfConst"
+    },
+    "one_line_comment": {
+      "regexp": "^(\/\/.*)",
+      "skip": true
+    },
+    "multi_line_comment": {
+      "regexp": "^(\/\\*(.|\n)*\\*\/)",
+      "skip": true
+    },
+    "int_dig_const": {
+      "regexp": "^(\\d+)",
+      "link": "arrayOfConst"
+    },
+    "ident": {
+      "regexp": "^([_$a-zA-Z]\\w*)",
+      "link": "arrayOfIdent"
+    },
+    "separator": {
+      "regexp": "^([^\\w\\d\\s])",
+      "list": ["(", ")", "{", "}", ";", ":", ",", "."]
+    },
+    "error": {
+      "regexp": "^(.*?)(?=[\\s][^\\w])"
+    }
+  }
